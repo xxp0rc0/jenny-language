@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff2e8">
+<meta name="description" content="Personal English and Vietnamese lessons with Jenny — practical, encouraging 1:1 language learning.">
+<title>Jenny — Learn with confidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --cream:#fff2e8;--paper:#fffdfa;--ink:#272725;--blue:#91a9ef;--pink:#f477b6;
+ --teal:#27a99b;--yellow:#ffd34f;--purple:#ad68ef;--line:3px solid var(--ink);
+ --shadow:6px 6px 0 var(--ink);--round:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.site-shell{width:min(1160px,calc(100% - 44px));margin:68px auto 34px;background:var(--paper);border:var(--line);border-radius:30px;z-index:1}
+header{height:88px;padding:0 7.5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:-.04em}
+.brand-mark{width:34px;height:34px;display:grid;place-items:center;background:var(--blue);border:2px solid var(--ink);border-radius:10px 10px 10px 3px;box-shadow:3px 3px 0 var(--ink);font-family:"Space Grotesk";font-size:20px;transform:rotate(-7deg)}
+nav{display:flex;gap:30px;align-items:center}
+nav a{text-decoration:none;font-weight:700;font-size:14px;position:relative}
+nav a:after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:3px;background:var(--pink);transition:width .22s}
+nav a:hover:after{width:100%}
+img {width: 110%;height: 90%;object-fit: cover;object-position: center top;}
+.menu-toggle{display:none;background:var(--yellow);border:2px solid var(--ink);border-radius:12px;padding:8px 12px;font-weight:800}
+.hero{min-height:560px;padding:74px 7.5% 70px;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:34px}
+.eyebrow{font-weight:700;color:#68645f;letter-spacing:.04em;font-size:14px}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(48px,6.1vw,76px);line-height:.99;letter-spacing:-.065em;margin:17px 0 22px;max-width:600px}
+h1 .highlight{position:relative;white-space:nowrap;z-index:0}
+h1 .highlight:after{content:"";position:absolute;z-index:-1;left:-3px;right:-5px;bottom:2px;height:20px;background:var(--yellow);transform:rotate(-1.5deg)}
+.hero-copy{font-size:17px;max-width:520px;color:#55534f}
+.hero-copy strong{color:var(--ink)}
+.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:13px 25px;font-weight:800;box-shadow:4px 4px 0 var(--ink);transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-primary{background:var(--yellow)}
+.btn-secondary{background:var(--paper)}
+.hero-art{min-height:390px;position:relative;display:grid;place-items:center}
+.photo-frame{width:min(330px,78%);height:365px;background:var(--pink);border:var(--line);border-radius:34px 34px 90px 34px;box-shadow:9px 9px 0 var(--ink);transform:rotate(3deg);overflow:hidden;position:relative;display:grid;place-items:center}
+.photo-frame iframe{width:100%;height:100%;border:0;background:#f8d7e8}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px;background:linear-gradient(145deg,#f7a7d2,#f477b6);pointer-events:none}
+.photo-fallback .initial{font-family:"Space Grotesk";font-size:100px;line-height:1;font-weight:700;color:var(--paper);text-shadow:5px 5px 0 var(--ink)}
+.photo-fallback small{font-weight:700;margin-top:12px}
+.sticker{position:absolute;border:var(--line);box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center;z-index:2;animation:float 4.5s ease-in-out infinite}
+.sticker-star{width:78px;height:78px;background:var(--yellow);border-radius:50%;font-size:43px;right:1%;top:14%;transform:rotate(12deg)}
+.sticker-book{width:86px;height:72px;background:var(--teal);border-radius:18px;left:0;top:28%;font-size:38px;transform:rotate(-9deg);animation-delay:-1s}
+.sticker-smile{width:74px;height:74px;background:var(--blue);border-radius:22px;bottom:4%;right:4%;font-size:39px;transform:rotate(9deg);animation-delay:-2s}
+.name-pill{position:absolute;top:2%;right:-2%;background:var(--blue);border:var(--line);border-radius:999px;padding:10px 24px;font-family:"Space Grotesk";font-size:25px;font-weight:700;box-shadow:5px 5px 0 var(--ink);transform:rotate(4deg);z-index:3}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -11px}}
+.section{padding:68px 7.5%}
+.section-heading{text-align:center;margin:0 auto 38px;max-width:650px}
+.section-heading .eyebrow{margin-bottom:5px}
+h2{font-family:"Space Grotesk";font-size:clamp(34px,4vw,48px);letter-spacing:-.05em;line-height:1.05;margin-bottom:12px}
+.section-heading p{color:#68645f;margin-bottom:0}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+.about-note{background:var(--blue);border:var(--line);border-radius:var(--round);box-shadow:var(--shadow);padding:30px;position:relative;overflow:hidden}
+.about-note h3{font:700 28px "Space Grotesk";line-height:1.1;max-width:300px}
+.about-note .scribble{font-size:76px;position:absolute;right:20px;bottom:0;transform:rotate(-13deg)}
+.about-text{padding:12px 10px 12px 20px}
+.about-text p{color:#5c5955}
+.facts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.fact{background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:10px 14px;font-size:13px;font-weight:800;box-shadow:3px 3px 0 var(--ink)}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.course{min-height:280px;background:white;border:2.5px solid var(--ink);border-radius:20px;box-shadow:5px 5px 0 var(--ink);padding:24px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.course:hover{transform:translateY(-7px) rotate(-.5deg);box-shadow:8px 12px 0 var(--ink)}
+.course:nth-child(2){background:#e8f6f2}.course:nth-child(3){background:#fff1c7}
+.course-icon{width:64px;height:64px;border:2px solid var(--ink);border-radius:17px;display:grid;place-items:center;font-size:34px;box-shadow:3px 3px 0 var(--ink);margin-bottom:25px;background:var(--pink)}
+.course:nth-child(2) .course-icon{background:var(--teal)}.course:nth-child(3) .course-icon{background:var(--yellow)}
+.course h3{font:700 23px "Space Grotesk";margin-bottom:8px}
+.course p{font-size:14px;color:#5c5955;margin-bottom:20px}
+.course a{margin-top:auto;font-size:14px;font-weight:800;text-decoration:none}
+.method{background:#f7f4f0;border-top:2px dashed #d7d0c8;border-bottom:2px dashed #d7d0c8}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.method-item{padding:22px;border:2px solid var(--ink);border-radius:18px;background:var(--paper)}
+.method-number{font:700 34px "Space Grotesk";color:var(--pink);text-shadow:2px 2px 0 var(--ink)}
+.method-item h3{font:700 19px "Space Grotesk";margin:8px 0}
+.method-item p{font-size:14px;color:#65615d;margin:0}
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.credential{padding:25px;border:2.5px solid var(--ink);border-radius:20px;box-shadow:5px 5px 0 var(--ink);background:var(--yellow)}
+.credential:nth-child(2){background:var(--pink)}
+.credential strong{display:block;font:700 35px "Space Grotesk";letter-spacing:-.04em}
+.credential span{font-size:14px;font-weight:700}
+.cta{margin:15px 7.5% 70px;padding:48px 35px;text-align:center;background:var(--teal);border:var(--line);border-radius:26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.cta h2{max-width:650px;margin:0 auto 14px}
+.cta p{max-width:540px;margin:0 auto 24px;color:#174b46}
+.cta .btn{background:var(--yellow)}
+footer{padding:0 7.5% 35px;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:13px;color:#666}
+footer a{font-weight:800;text-decoration:none;color:var(--ink)}
+.decor{position:absolute;z-index:0;pointer-events:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.decor-left{width:105px;height:105px;border-radius:50%;background:var(--pink);left:-38px;top:47%;display:grid;place-items:center;font-size:50px;transform:rotate(-15deg)}
+.decor-right{width:65px;height:65px;background:var(--yellow);border-radius:18px;right:-20px;top:74%;transform:rotate(24deg)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){
+ .site-shell{width:calc(100% - 22px);margin:12px auto 20px;border-radius:22px}
+ header{height:74px;padding:0 6%}
+ .menu-toggle{display:block}
+ nav{display:none;position:absolute;top:66px;left:5%;right:5%;padding:18px;background:var(--paper);border:2px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);flex-direction:column;align-items:flex-start;z-index:10}
+ nav.open{display:flex}
+ .hero{grid-template-columns:1fr;padding:48px 7% 55px;gap:15px}
+ .hero-art{min-height:360px;grid-row:1}
+ .photo-frame{height:315px;width:min(290px,75%)}
+ .name-pill{right:0;top:0;font-size:20px}
+ .sticker-book{left:1%;top:23%}.sticker-star{right:0;top:12%}
+ .section{padding:52px 7%}
+ .about-grid,.course-grid,.method-grid,.credentials{grid-template-columns:1fr}
+ .about-text{padding:10px 0}
+ .course{min-height:245px}
+ .cta{margin:8px 7% 50px;padding:38px 20px}
+ footer{padding:0 7% 28px;flex-direction:column;align-items:flex-start}
+ .decor{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="site-shell">
+  <div class="decor decor-left">✳</div><div class="decor decor-right"></div>
+  <header>
+    <a class="brand" href="#home" aria-label="Jenny home"><span class="brand-mark">J</span><span>jenny.learn</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu ☰</button>
+    <nav id="nav">
+      <a href="#about">About</a><a href="#courses">What I Teach</a><a href="#approach">My Approach</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Hi there! I'm Jenny 👋</div>
+        <h1>Let's make<br>languages <span class="highlight">click.</span></h1>
+        <p class="hero-copy">Friendly, practical <strong>1:1 English and Vietnamese lessons</strong> designed around you. Learn with confidence, speak with purpose, and enjoy every little win along the way.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:Haoanh221197@gmail.com?subject=I'd%20love%20to%20learn%20with%20you">Let's learn together <span>↗</span></a>
+          <a class="btn btn-secondary" href="#courses">Explore lessons ↓</a>
+        </div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="name-pill">Jenny!</div>
+        <div class="photo-frame">
+          <img  src="./jenny.png"></img>
+          <!-- <div class="photo-fallback"><div class="initial">J</div><small>Jenny's portrait</small></div> -->
+        </div>
+        <div class="sticker sticker-book" aria-hidden="true">▤</div>
+        <div class="sticker sticker-star" aria-hidden="true">✦</div>
+        <div class="sticker sticker-smile" aria-hidden="true">☺</div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div class="section-heading"><div class="eyebrow">A little about me</div><h2>Language learning, with a human touch.</h2><p>Good lessons should feel personal, encouraging and useful in real life.</p></div>
+      <div class="about-grid">
+        <div class="about-note"><h3>Curious minds. Real conversations. Big progress.</h3><div class="scribble" aria-hidden="true">✎</div></div>
+        <div class="about-text">
+          <p>I'm Jenny, a language teacher with five years of experience helping learners build confidence in English and Vietnamese. I graduated from Foreign Trade University with a degree in Business English, and I speak Japanese too — so I understand what it feels like to learn and use a language across cultures.</p>
+          <p>My goal is simple: make every lesson practical, supportive and tailored to your goals, whether you're starting from the basics or getting ready to speak more naturally.</p>
+          <div class="facts"><span class="fact">5 years teaching</span><span class="fact">TOEIC 900+</span><span class="fact">Japanese speaker</span><span class="fact">FTU graduate</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="courses">
+      <div class="section-heading"><div class="eyebrow">Pick your learning adventure</div><h2>What I teach</h2><p>Personal 1:1 lessons shaped around your level, pace and goals.</p></div>
+      <div class="course-grid">
+        <article class="course"><div class="course-icon">🇻🇳</div><h3>Vietnamese 1:1</h3><p>Build everyday Vietnamese for travel, relationships, work and connecting with local culture.</p><a href="mailto:Haoanh221197@gmail.com?subject=Vietnamese%201%3A1%20lessons">Explore Vietnamese lessons ↗</a></article>
+        <article class="course"><div class="course-icon">💬</div><h3>English 1:1</h3><p>Strengthen your English foundations with lessons tailored to your level and real-life needs.</p><a href="mailto:Haoanh221197@gmail.com?subject=English%201%3A1%20lessons">Explore English lessons ↗</a></article>
+        <article class="course"><div class="course-icon">🎤</div><h3>English Speaking</h3><p>Practice speaking naturally, expand your vocabulary and feel more comfortable in conversation.</p><a href="mailto:Haoanh221197@gmail.com?subject=English%20speaking%20lessons">Explore speaking lessons ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section method reveal" id="approach">
+      <div class="section-heading"><div class="eyebrow">No one-size-fits-all lessons</div><h2>Your goals set the pace.</h2><p>A simple, collaborative approach to making progress that lasts.</p></div>
+      <div class="method-grid">
+        <article class="method-item"><div class="method-number">01</div><h3>We get to know you</h3><p>We talk about your level, interests and what you want to achieve.</p></article>
+        <article class="method-item"><div class="method-number">02</div><h3>Make a personal plan</h3><p>Lessons focus on the skills and situations that matter most to you.</p></article>
+        <article class="method-item"><div class="method-number">03</div><h3>Practice & grow</h3><p>Get supportive feedback, useful practice and clear next steps after each lesson.</p></article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading"><div class="eyebrow">A little proof, a lot of passion</div><h2>Experience that supports your progress.</h2></div>
+      <div class="credentials">
+        <div class="credential"><strong>5 years</strong><span>Teaching English and Vietnamese</span></div>
+        <div class="credential"><strong>TOEIC 900+</strong><span>English proficiency credential</span></div>
+      </div>
+    </section>
+
+    <section class="cta reveal" id="contact">
+      <div class="eyebrow">Your next chapter starts here</div>
+      <h2>Ready to find your voice?</h2>
+      <p>Tell me what you'd like to learn. We'll figure out a lesson plan that feels right for you.</p>
+      <a class="btn" href="mailto:Haoanh221197@gmail.com?subject=Let's%20talk%20about%20lessons">Say hello to Jenny ↗</a>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> Jenny · Made for curious learners ✦</span><a href="mailto:Haoanh221197@gmail.com">Haoanh221197@gmail.com</a></footer>
+</div>
+<script>
+const menuButton=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#nav');
+menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
+document.querySelector('#year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
